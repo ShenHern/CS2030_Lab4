@@ -12,5 +12,10 @@ class Request {
     public int computeFare(Service service) {
         return service.computeFare(this.dist, this.numPass, this.time);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%dkm for %dpax @ %dhrs", this.dist, this.numPass, this.time);
+    }
 }
 
