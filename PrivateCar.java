@@ -33,6 +33,21 @@ public class PrivateCar implements Driver {
     }
 
     @Override
+    public Pair<Integer, Service> getSecondFare(Request req) {
+        int highestFare = 0;
+        int idx = 0;
+        for (int i = 0; i < this.services.size(); i++) {
+            int tmp = req.computeFare(services.get(i));
+            if (tmp > highestFare) {
+                highestFare = tmp;
+                idx = i;
+            }
+        }
+
+        return new Pair<Integer, Service>(highestFare, services.get(idx));
+    }
+
+    @Override
     public int getWaitTime() {
         return this.waitTime;
     }
