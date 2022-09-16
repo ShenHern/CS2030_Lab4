@@ -1,12 +1,10 @@
 public class Booking implements Comparable<Booking> {
     private final int fare;
     private final Driver driver;
-    private final Request req;
     private final Service s;
 
     Booking(Driver driver, Request req) {
         this.driver = driver;
-        this.req = req;
         Pair<Integer, Service> pr = driver.getFare(req);
         this.fare = pr.first();
         this.s = pr.second(); 

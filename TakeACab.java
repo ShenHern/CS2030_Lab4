@@ -1,9 +1,9 @@
 class TakeACab implements Service {
-    private final int centsPerKm = 33;
-    private final int bookingFee = 200;
+    private static final int CENTSPERKM = 33;
+    private static final int BOOKINGFEE = 200;
 
     public int computeFare(int dist, int numPass, int time) {
-        return this.centsPerKm * dist + this.bookingFee;
+        return CENTSPERKM * dist + BOOKINGFEE;
     }
 
     @Override
