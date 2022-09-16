@@ -5,4 +5,9 @@ class TakeACab implements Service {
     public int computeFare(int dist, int numPass, int time) {
         return this.centsPerKm * dist + this.bookingFee;
     }
+
+    @Override
+    public String toString() {
+        return "TakeACab";
+    }
 }
