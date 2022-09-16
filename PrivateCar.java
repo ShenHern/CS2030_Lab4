@@ -1,14 +1,15 @@
 import java.util.List;
 
-class NormalCab implements Driver {
+public class PrivateCar implements Driver {
+    
     private final String plateNum;
     private final int waitTime;
     private final ImList<Service> services;
 
-    NormalCab(String plateNum, int waitTime) {
+    PrivateCar(String plateNum, int waitTime) {
         this.plateNum = plateNum;
         this.waitTime = waitTime;
-        this.services = new ImList<Service>(List.of(new JustRide(), new TakeACab()));
+        this.services = new ImList<Service>(List.of(new JustRide(), new ShareARide()));
     }
 
     @Override
@@ -38,6 +39,6 @@ class NormalCab implements Driver {
 
     @Override
     public String toString() {
-        return String.format("%s (%d mins away) NormalCab", this.plateNum, this.waitTime);
+        return String.format("%s (%d mins away) PrivateCar", this.plateNum, this.waitTime);
     }
 }
